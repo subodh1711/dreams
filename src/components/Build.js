@@ -10,9 +10,15 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function Build() {
+  const navigate=useNavigate();
+  const submitHandle=(e)=>{
+      e.preventDefault();
+      navigate('/infodetails');
+  }
   return (
     <div>
         <center>
@@ -23,37 +29,37 @@ export default function Build() {
       <Timeline>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot >
-            1
+          <TimelineDot class="bg-light text-dark" style={{width:30,height:30,"borderRadius":20}}>
+          <p className='pt-1'>1</p>
           </TimelineDot >
           
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Build your dreams</TimelineContent>
+        <TimelineContent  className="text-white" >Build your dreams</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
-        <TimelineDot >
-            2
+        <TimelineDot class="bg-light text-dark" style={{width:30,height:30,"borderRadius":20}}>
+        <p className='pt-1'>2</p>
           </TimelineDot >
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Flight selected</TimelineContent>
+        <TimelineContent >Flight selected</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
-        <TimelineDot >
-            3
+        <TimelineDot class="bg-light text-dark" style={{width:30,height:30,"borderRadius":20}} >
+        <p className='pt-1'>3</p>
           </TimelineDot >
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Info details</TimelineContent>
+        <TimelineContent  >Info details</TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
-        <TimelineDot >
-            4
-          </TimelineDot >
+        <TimelineDot class="bg-light text-dark" style={{width:30,height:30,"borderRadius":20}} >
+        <p className='pt-1'>4</p>
+          </TimelineDot  >
             </TimelineSeparator>
         <TimelineContent>Confirmation</TimelineContent>
       </TimelineItem>
@@ -90,16 +96,16 @@ export default function Build() {
   <div class="row img ">
     <div class="col flight ">
     <MdFlightTakeoff size={80} />
-    <p>FLIGHT</p>
+    <h3>FLIGHT</h3>
   
     </div>
     <div class="col hotel">
     <FaHome size={80}/>
-    <p>HOTEL</p>
+    <h3>HOTEL</h3>
     </div>
     <div class="col hotel-flight">
     <FaHotel size={80}/>  
-    <p>HOTEL_FLIGHT</p>
+    <h3>HOTEL_FLIGHT</h3>
     </div>
   </div>
 </div>
@@ -110,10 +116,11 @@ export default function Build() {
                 <div class=" p-3 pt-4 mt-4 d-flex   click  ">
                   
          
-                    <button className='btn btn-outline-primary ms-auto back' type="subimt">
+                    <button className='btn btn-outline-primary ms-auto back'  type="subimt">
                         Back
                         </button>
-                    <button className='btn btn-primary' type="subimt">Next</button>
+                    {/* <button className='btn btn-primary' type="subimt">Next</button> */}
+                    <Link to="/infodetails" className="btn btn-primary "  type="subimt">Next</Link>
                 </div><br /><br /><br /><br/>
             
 
